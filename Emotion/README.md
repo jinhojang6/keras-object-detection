@@ -7,7 +7,7 @@
 
 Clone the repository:
 ```
-git clone https://github.com/jinhojang6/opencv-project.git
+git clone https://github.com/jinhojang6/ai-detection-practice.git
 cd opencv-project/project_2/Emotion
 ```
 
