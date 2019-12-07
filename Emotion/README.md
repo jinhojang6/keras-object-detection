@@ -12,7 +12,9 @@ cd opencv-project/project_2/Emotion
 ```
 
 Install all the dependencies with `pip3 install <module name>`
-pip3 install tessorflow-gpu==2.0
+
+```
+pip3 install tensorflow-gpu==2.0
 pip3 install numpy==1.17.4
 pip3 install scipy==1.1.0
 pip3 install opencv-python==4.1.2.30
@@ -21,6 +23,9 @@ pip3 install pandas==0.25.3
 pip3 install matplotlib==3.1.2
 pip3 install h5py==2.10.0
 pip3 install keras==2.3.1
+```
+
+or use `pip3 install tensorflow-gpu==2.0 numpy==1.17.4 ...`
 
 
 ## Run
