@@ -1,17 +1,17 @@
-# YOLOv3-Object-Detection-with-OpenCV
+# Credit
 
-This project implements an image and video object detection classifier using pretrained yolov3 models. 
-The yolov3 models are taken from the official yolov3 paper which was released in 2018. The yolov3 implementation is from [darknet](https://github.com/pjreddie/darknet). Also, this project implements an option to perform classification real-time using the webcam.
+- iArunava : https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV
+
 
 ## How to use?
 
-1) Clone the repository
+1) Clone the repository and download a [weights file](https://pjreddie.com/media/files/yolov3.weights)
 
 ```
 git clone https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV.git
 ```
 
-2) Move to the directory
+2) Move to the directory and move the weights file to /yolov3-coco
 ```
 cd YOLOv3-Object-Detection-with-OpenCV
 ```
@@ -36,8 +36,14 @@ If the files are located somewhere else then mention the path while calling the 
 yolo.py --help
 ```
 
-## Inference on images
+## Example
+```
+python3 yolo.py --video-path='./test2.mp4'
 
+You will find `output.avi` (takes 3-4 minutes to process 10 seconds video using CPU)
+```
+
+## Inference on images
 
 ![yolo_img_infer_1](https://user-images.githubusercontent.com/26242097/48849319-15d21180-edcc-11e8-892f-7d894be8d1a6.png)
 ![yolo_img_infer_2](https://user-images.githubusercontent.com/26242097/48850723-41a2c680-edcf-11e8-8940-aec302cd8aa3.png)
