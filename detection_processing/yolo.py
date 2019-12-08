@@ -64,7 +64,7 @@ if __name__ == '__main__':
 
 	# # 2. Facial expressions
 
-	# # face expression weights: https://drive.google.com/file/d/1xYasjU52whXMLT5MtF7RCPQkV66993oR/view 
+	# # face expression weights: https://drive.google.com/open?id=1n66gI61kilcsdWSHEHaSY0oNSDfWKBFp 
 	# # Need line 171-223 to use facial expressions
 	# parser.add_argument('-w', '--weights',
 	# 	type=str,	
