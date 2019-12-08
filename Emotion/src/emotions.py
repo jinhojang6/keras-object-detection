@@ -101,7 +101,6 @@ while cap.isOpened(): # True:
         color = color.astype(int)
         color = color.tolist()
 
-        draw_bounding_box(face_coordinates, rgb_image, color)
         draw_text(face_coordinates, rgb_image, emotion_mode,
                   color, 0, -45, 1, 1)
 
