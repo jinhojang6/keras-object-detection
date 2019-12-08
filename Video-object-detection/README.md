@@ -5,7 +5,7 @@
 
 ## How to use?
 
-1) Clone the repository and download a [weights file](https://pjreddie.com/media/files/yolov3.weights)
+1) Clone the repository and download [yolove3-spp.weights](https://pjreddie.com/media/files/yolov3-spp.weights)
 
 ```
 git clone https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV.git
@@ -38,9 +38,9 @@ yolo.py --help
 
 ## Example
 ```
-python3 yolo.py --video-path='./test2.mp4'
+python3 yolo.py --video-path='./test.mp4'
 
-You will find `output.avi` (takes 3-4 minutes to process 10 seconds video using CPU)
+You will find `output.avi` (takes 4-5 minutes to process 10 seconds video using CPU)
 ```
 
 ## Inference on images

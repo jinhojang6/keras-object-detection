@@ -17,9 +17,10 @@ if __name__ == '__main__':
 		help='The directory where the model weights and \
 			  configuration files are.')
 
+	# or default='./yolov3-coco/yolov3.weights' and use this cfg: https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
 	parser.add_argument('-w', '--weights',
-		type=str,
-		default='./yolov3-coco/yolov3.weights',
+		type=str,	
+		default='./yolov3-coco/yolov3-spp.weights',
 		help='Path to the file which contains the weights \
 			 	for YOLOv3.')
 
