@@ -1,6 +1,6 @@
 ## Credit
 
-- petercunha/Emotion Github repository https://github.com/petercunha/Emotion.git
+- petercunha: https://github.com/petercunha/Emotion.git
 
 
 ## Installation
