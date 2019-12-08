@@ -8,7 +8,7 @@ Object detcetion & Facial emotion recognition
     - Facial expression: follow the comments in yolo.py
 
 
-- Facial emotion training : [Emotion/README.md](https://github.com/jinhojang6/ai-powered-detection/blob/master/emotion_training/README.md)
+- Facial emotion training : [emotion_training/README.md](https://github.com/jinhojang6/ai-powered-detection/blob/master/emotion_training/README.md)
     - [fer2013 dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data), Tensorflow and Keras
 
 
