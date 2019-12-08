@@ -37,7 +37,7 @@ Once the dependencies are installed successfully, go to the directory where emot
 ## Training a model with Colab
 
 - Upload `emotion_training.ipynb` on Colab
-- Find an example of a directory structure at : http://bit.ly/keras-emotion-detection
+- Find an example of a directory structure at : http://bit.ly/keras-detection-practice
 - Download datasets in /datasets (There is a filder named fer2013). A cloned repository doesn't include the datasets
 - Upload directory structures as the link above on your Google Drive. It should be AI/Emotion
 - To mount your Google Drive files containing the dataset, run `emotion_training.ipynb` and follow all the instructions at

@@ -5,7 +5,7 @@
 
 ## How to use?
 
-1) Clone the repository and download [yolove3-spp.weights](https://pjreddie.com/media/files/yolov3-spp.weights)
+1) Clone the repository and download [weights files](http://bit.ly/keras-detection-practice)
 
 ```
 git clone https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV.git
