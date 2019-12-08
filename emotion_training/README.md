@@ -7,8 +7,8 @@
 
 Clone the repository:
 ```
-git clone https://github.com/jinhojang6/ai-detection-practice.git
-cd opencv-project/project_2/Emotion
+git clone https://github.com/jinhojang6/ai-powered-detection.git
+cd ai-powered-detection/emotion_training
 ```
 
 Install all the dependencies with `pip3 install <module name>`
@@ -39,13 +39,13 @@ Once the dependencies are installed successfully, go to the directory where emot
 - Upload `emotion_training.ipynb` on Colab
 - Find an example of a directory structure at : http://bit.ly/keras-detection-practice
 - Download datasets in /datasets (There is a filder named fer2013). A cloned repository doesn't include the datasets
-- Upload directory structures as the link above on your Google Drive. It should be AI/Emotion
+- Upload directory structures as the link above on your Google Drive.
 - To mount your Google Drive files containing the dataset, run `emotion_training.ipynb` and follow all the instructions at
 ```
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-- `!cd drive/My\ Drive/AI/Emotion/src && python3 train_emotion_classifier.py` will kick off a training (4 epochs by default) and it creates a brand new model in `trained_models/emotion_models` (.hdf5 file extension)
+- `!cd drive/My\ Drive/AI/emotion_training/src && python3 train_emotion_classifier.py` will kick off a training (4 epochs by default) and it creates a brand new model in `trained_models/emotion_models` (.hdf5 file extension)
 - Move the new model created to src/models/ in your cloned repository
 - In `emotions.py`, replace `emotion_model_path = './models/emotion_model.hdf5` with the new model file
 - Run `python3 emotions.py` and you will find a different result from the original model
