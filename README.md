@@ -1,4 +1,4 @@
-## opencv-project  
+## AI-Powered-Detection
 Object detcetion & Facial emotion recognition
 
 - Facial emotion recognition : [Emotion/README.md](https://github.com/jinhojang6/ai-detection-practice/blob/master/Emotion/README.md)
