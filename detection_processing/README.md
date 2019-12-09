@@ -15,12 +15,12 @@ pip3 install tensorflow-gpu==2.0 numpy==1.17.4 scipy==1.1.0 opencv-python==4.1.2
 1) Clone the repository and download [weights files](http://bit.ly/keras-detection-practice)
 
 ```
-git clone https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV.git
+https://github.com/jinhojang6/ai-powered-detection.git
 ```
 
 2) Move to the directory and move the weights file to /yolov3-coco
 ```
-cd YOLOv3-Object-Detection-with-OpenCV
+cd ai-powered-detection
 ```
 
 3) To infer on an image that is stored on your local machine
@@ -45,6 +45,7 @@ yolo.py --help
 
 ## Example
 ```
+#Choose python or python3 of your choice
 Mac or Linux: python3 yolo.py --video-path='./test.mp4'
 Windows: python3 yolo.py --video-path='.\test.mp4'
 
