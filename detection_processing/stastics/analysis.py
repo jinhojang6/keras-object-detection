@@ -18,8 +18,8 @@ path_out = f'../results/{filename_short}'
 
 analysis_stastics.stats = analysis_stastics.stastics()
 test_face_improved(path_in, path_out)
-#test_object_default(path_in, path_out)
-#test_object_improved(path_in, path_out)
+test_object_default(path_in, path_out)
+test_object_improved(path_in, path_out)
 
 avg_result = analysis_stastics.stats.get_avg()
 print(avg_result)
