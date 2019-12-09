@@ -13,12 +13,15 @@ filename = 'PopeVisitToKorea.mp4'
 words = filename.split('.')
 filename_short = '.'.join(words[:len(words) - 1])
 
-path_in = ''.join(('../videos/', filename))
-path_out = ''.join(('../results/', filename_short))
+path_in = f'../videos/{filename}'
+path_out = f'../results/{filename_short}'
 
 analysis_stastics.stats = analysis_stastics.stastics()
 test_face_improved(path_in, path_out)
 #test_object_default(path_in, path_out)
 #test_object_improved(path_in, path_out)
 
-print(analysis_stastics.stats.get_avg())
+avg_result = analysis_stastics.stats.get_avg()
+print(avg_result)
+with open(file_path, 'w') as file:
+	file.write('../results/result_avg.txt')
