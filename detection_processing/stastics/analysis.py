@@ -22,6 +22,8 @@ test_object_default(path_in, path_out)
 test_object_improved(path_in, path_out)
 
 avg_result = analysis_stastics.stats.get_avg()
-print(avg_result)
-with open(file_path, 'w') as file:
-	file.write('../results/result_avg.txt')
+result_out = ''
+for mode in avg_result:
+	result_out += f'{mode} : {avg_result[mode]}\n'
+with open('../results/result_avg.txt', 'w') as file:
+	file.write(result_out)
