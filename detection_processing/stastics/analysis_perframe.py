@@ -1,7 +1,7 @@
 import os
 import analysis_stastics
 
-def per_frame_handler(frame_number, output_array, output_count = None, returned_frame = None, suffix = 'default'):
+def per_frame_handler(frame_number, output_array, output_count = None, returned_frame = None, suffix = 'object_default'):
 	stat = {}
 
 	for output in output_array:
