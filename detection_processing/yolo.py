@@ -42,8 +42,6 @@ Exit : other than 1 or 2
 
 Choice: '''))
 
-	# !Important: Comment out one of options below : 1) Object detection, 2) Facial expressions
-
 
 	# 1. Object detection
 	if choice == 1:
