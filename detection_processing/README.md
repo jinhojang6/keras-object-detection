@@ -4,9 +4,8 @@
 
 ## Installation
 ```
-# recommend using tensorflow=2.0 or tensorflow-gpu=2.0
+# recommend using tensorflow==2.0 or tensorflow-gpu==2.0
 pip3 install tensorflow-gpu==2.0 numpy==1.17.4 scipy==1.1.0 opencv-python==4.1.2.30 pillow==6.2.1 pandas==0.25.3 matplotlib==3.1.2 h5py==2.10.0 keras==2.3.1
-
 ```
 
 
