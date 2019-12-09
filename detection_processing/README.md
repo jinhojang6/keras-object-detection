@@ -2,6 +2,13 @@
 
 - iArunava : https://github.com/iArunava/YOLOv3-Object-Detection-with-OpenCV
 
+## Installation
+```
+#use tensorflow or tensorflow-gpu of your choice
+pip3 install tensorflow-gpu==2.0 numpy==1.17.4 scipy==1.1.0 opencv-python==4.1.2.30 pillow==6.2.1 pandas==0.25.3 matplotlib==3.1.2 h5py==2.10.0 keras==2.3.1
+
+```
+
 
 ## How to use?
 
@@ -38,7 +45,8 @@ yolo.py --help
 
 ## Example
 ```
-python3 yolo.py --video-path='./test.mp4'
+Mac or Linux: python3 yolo.py --video-path='./test.mp4'
+Windows: python3 yolo.py --video-path='.\test.mp4'
 
 You will find `output.avi` (takes 4-5 minutes to process 10 seconds video using CPU)
 ```
