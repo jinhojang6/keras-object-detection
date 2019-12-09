@@ -6,6 +6,7 @@ import time
 import os
 from yolo_utils import infer_image, show_image
 from keras.models import load_model
+import sys
 
 from utils.datasets import get_labels
 from utils.inference import detect_faces
@@ -30,54 +31,63 @@ face_cascade = cv.CascadeClassifier('./models/haarcascade_frontalface_default.xm
 
 
 if __name__ == '__main__':
+
 	parser = argparse.ArgumentParser()
+
+	choice = int(input('''
+
+Object detection : 1 
+Facial expression : 2
+Exit : other than 1 or 2
+
+Choice: '''))
+
+	# !Important: Comment out one of options below : 1) Object detection, 2) Facial expressions
+
+
+	# 1. Object detection
+	if choice == 1:
+		# If you want to use a lighter model : https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg &
+		# and find this cfg file : https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg , yolov3-spp is stronger than yolov3. 
+		parser.add_argument('-w', '--weights',
+			type=str,	
+			default='./yolov3-coco/yolov3-spp.weights',
+			help='Path to the file which contains the weights \
+					for YOLOv3.')
+
+		# object detection cfg
+		parser.add_argument('-cfg', '--config',
+			type=str,
+			default='./yolov3-coco/yolov3.cfg',
+			help='Path to the configuration file for the YOLOv3 model.')
+
+
+	# 2. Facial expressions
+	elif choice == 2:
+		# The weights file for face expression : https://drive.google.com/open?id=1n66gI61kilcsdWSHEHaSY0oNSDfWKBFp 
+		# Need line 171-223 to use facial expressions
+		parser.add_argument('-w', '--weights',
+			type=str,	
+			default='./yolov3-coco/yolov3-wider_16000.weights',
+			help='Path to the file which contains the weights \
+					for YOLOv3.')
+
+		# facial expression cfg
+		parser.add_argument('-cfg', '--config',
+			type=str,
+			default='./yolov3-coco/yolov3-face.cfg',
+			help='Path to the configuration file for the YOLOv3 model.')
+
+
+	# Terminate the program
+	else:
+		sys.exit()
 
 	parser.add_argument('-m', '--model-path',
 		type=str,
 		default='./yolov3-coco/',
 		help='The directory where the model weights and \
 			  configuration files are.')
-
-
-	# !Important: Comment out one of options below : 1) Object detection, 2) Facial expressions
-
-
-	# 1. Object detection
-
-	# if you want to use a lighter version: https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg &
-	# and use this cfg: https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
-	# yolov3-spp is stronger than yolov3. 
-	# Don't foget to comment out line 171-223 to use object detection
-	parser.add_argument('-w', '--weights',
-		type=str,	
-		default='./yolov3-coco/yolov3-spp.weights',
-		help='Path to the file which contains the weights \
-			 	for YOLOv3.')
-
-	# object detection cfg
-	parser.add_argument('-cfg', '--config',
-		type=str,
-		default='./yolov3-coco/yolov3.cfg',
-		help='Path to the configuration file for the YOLOv3 model.')
-
-
-
-	# # 2. Facial expressions
-
-	# # face expression weights: https://drive.google.com/open?id=1n66gI61kilcsdWSHEHaSY0oNSDfWKBFp 
-	# # Need line 171-223 to use facial expressions
-	# parser.add_argument('-w', '--weights',
-	# 	type=str,	
-	# 	default='./yolov3-coco/yolov3-wider_16000.weights',
-	# 	help='Path to the file which contains the weights \
-	# 		 	for YOLOv3.')
-
-	# # facial expression cfg
-	# parser.add_argument('-cfg', '--config',
-	# 	type=str,
-	# 	default='./yolov3-coco/yolov3-face.cfg',
-	# 	help='Path to the configuration file for the YOLOv3 model.')
-
 
 
 	parser.add_argument('-i', '--image-path',
@@ -188,58 +198,59 @@ if __name__ == '__main__':
 				bgr_image, _, _, _, _ = infer_image(net, layer_names, height, width, bgr_image, colors, labels, FLAGS)
 
 
-				# # Start of facial expression, comment out this section if you want object detection
-				# gray_image = cv.cvtColor(bgr_image, cv.COLOR_BGR2GRAY)
-				# rgb_image = cv.cvtColor(bgr_image, cv.COLOR_BGR2RGB)
+				if choice == 2:
+					# Start of facial expression, comment out this section if you want object detection
+					gray_image = cv.cvtColor(bgr_image, cv.COLOR_BGR2GRAY)
+					rgb_image = cv.cvtColor(bgr_image, cv.COLOR_BGR2RGB)
 
-				# faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5,
-				# 		minSize=(30, 30), flags=cv.CASCADE_SCALE_IMAGE)
+					faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5,
+							minSize=(30, 30), flags=cv.CASCADE_SCALE_IMAGE)
 
-				# for face_coordinates in faces:
+					for face_coordinates in faces:
 
-				# 	x1, x2, y1, y2 = apply_offsets(face_coordinates, emotion_offsets)
-				# 	gray_face = gray_image[y1:y2, x1:x2]
-				# 	try:
-				# 		gray_face = cv.resize(gray_face, (emotion_target_size))
-				# 	except:
-				# 		continue
+						x1, x2, y1, y2 = apply_offsets(face_coordinates, emotion_offsets)
+						gray_face = gray_image[y1:y2, x1:x2]
+						try:
+							gray_face = cv.resize(gray_face, (emotion_target_size))
+						except:
+							continue
 
-				# 	gray_face = preprocess_input(gray_face, True)
-				# 	gray_face = np.expand_dims(gray_face, 0)
-				# 	gray_face = np.expand_dims(gray_face, -1)
-				# 	emotion_prediction = emotion_classifier.predict(gray_face)
-				# 	emotion_probability = np.max(emotion_prediction)
-				# 	emotion_label_arg = np.argmax(emotion_prediction)
-				# 	emotion_text = emotion_labels[emotion_label_arg]
-				# 	emotion_window.append(emotion_text)
+						gray_face = preprocess_input(gray_face, True)
+						gray_face = np.expand_dims(gray_face, 0)
+						gray_face = np.expand_dims(gray_face, -1)
+						emotion_prediction = emotion_classifier.predict(gray_face)
+						emotion_probability = np.max(emotion_prediction)
+						emotion_label_arg = np.argmax(emotion_prediction)
+						emotion_text = emotion_labels[emotion_label_arg]
+						emotion_window.append(emotion_text)
 
-				# 	if len(emotion_window) > frame_window:
-				# 		emotion_window.pop(0)
-				# 	try:
-				# 		emotion_mode = mode(emotion_window)
-				# 	except:
-				# 		continue
+						if len(emotion_window) > frame_window:
+							emotion_window.pop(0)
+						try:
+							emotion_mode = mode(emotion_window)
+						except:
+							continue
 
-				# 	if emotion_text == 'angry':
-				# 		color = emotion_probability * np.asarray((255, 0, 0))
-				# 	elif emotion_text == 'sad':
-				# 		color = emotion_probability * np.asarray((0, 0, 255))
-				# 	elif emotion_text == 'happy':
-				# 		color = emotion_probability * np.asarray((255, 255, 0))
-				# 	elif emotion_text == 'surprise':
-				# 		color = emotion_probability * np.asarray((0, 255, 255))
-				# 	else:
-				# 		color = emotion_probability * np.asarray((0, 255, 0))
+						if emotion_text == 'angry':
+							color = emotion_probability * np.asarray((255, 0, 0))
+						elif emotion_text == 'sad':
+							color = emotion_probability * np.asarray((0, 0, 255))
+						elif emotion_text == 'happy':
+							color = emotion_probability * np.asarray((255, 255, 0))
+						elif emotion_text == 'surprise':
+							color = emotion_probability * np.asarray((0, 255, 255))
+						else:
+							color = emotion_probability * np.asarray((0, 255, 0))
 
-				# 	color = color.astype(int)
-				# 	color = color.tolist()
+						color = color.astype(int)
+						color = color.tolist()
 
-				# 	draw_text(face_coordinates, rgb_image, emotion_mode,
-				# 			color, 0, -45, 1, 1)
+						draw_text(face_coordinates, rgb_image, emotion_mode,
+								color, 0, -45, 1, 1)
 
-				# bgr_image = cv.cvtColor(rgb_image, cv.COLOR_RGB2BGR)
+					bgr_image = cv.cvtColor(rgb_image, cv.COLOR_RGB2BGR)
 
-				# # End of facial expression
+					# End of facial expression
 
 				if writer is None:
 					# Initialize the video writer
@@ -248,10 +259,9 @@ if __name__ == '__main__':
 						            (bgr_image.shape[1], bgr_image.shape[0]), True)
 
 
-
 				writer.write(bgr_image)
 
-			print ("[INFO] Cleaning up...")
+			print ("[INFO] Finished processing")
 			writer.release()
 			cap.release()
 
