@@ -4,7 +4,7 @@
 
 ## Installation
 ```
-#use tensorflow or tensorflow-gpu of your choice
+# recommend using tensorflow=2.0 or tensorflow-gpu=2.0
 pip3 install tensorflow-gpu==2.0 numpy==1.17.4 scipy==1.1.0 opencv-python==4.1.2.30 pillow==6.2.1 pandas==0.25.3 matplotlib==3.1.2 h5py==2.10.0 keras==2.3.1
 
 ```
@@ -49,7 +49,7 @@ yolo.py --help
 Mac or Linux: python3 yolo.py --video-path='./test.mp4'
 Windows: python3 yolo.py --video-path='.\test.mp4'
 
-You will find `output.avi` (takes 4-5 minutes to process 10 seconds video using CPU)
+You will find `output.avi` in the project folder (Could take 2-5 minutes to process 10 seconds video using CPU)
 ```
 
 
