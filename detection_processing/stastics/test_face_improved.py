@@ -2,6 +2,7 @@ import argparse
 import cv2 as cv
 import numpy as np
 import analysis_perframe as pfh
+import analysis_stastics
 from keras.models import load_model
 
 import sys
@@ -70,6 +71,8 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 		faces = face_cascade.detectMultiScale(gray_image, scaleFactor=1.1, minNeighbors=5,
 				minSize=(30, 30), flags=cv.CASCADE_SCALE_IMAGE)
 
+		analysis_stastics.emotions.add_frame()
+
 		for face_coordinates in faces:
 
 			x1, x2, y1, y2 = apply_offsets(face_coordinates, emotion_offsets)
@@ -87,6 +90,8 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 			emotion_label_arg = np.argmax(emotion_prediction)
 			emotion_text = emotion_labels[emotion_label_arg]
 			emotion_window.append(emotion_text)
+
+			analysis_stastics.emotions.add_emotion(emotion_text)
 
 			if len(emotion_window) > frame_window:
 				emotion_window.pop(0)
@@ -122,9 +127,9 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 
 		if writer is None:
 			fourcc = cv.VideoWriter_fourcc(*"MJPG")
-			writer = cv.VideoWriter(FLAGS.video_output_path, fourcc, 30, (frame.shape[1], frame.shape[0]), True)
+			writer = cv.VideoWriter(FLAGS.video_output_path, fourcc, 30, (img.shape[1], img.shape[0]), True)
 
-		writer.write(frame)
+		writer.write(img)
 
 	writer.release()
 	vid.release()

@@ -21,3 +21,22 @@ class stastics():
 				self.stastics[suffix][item]['confidence_avg'] = self.stastics[suffix][item]['confidence_sum'] / self.stastics[suffix][item]['count_sum']
 
 		return self.stastics
+
+class emotions():
+	def __init__(self):
+		self.emotions = {'frame_no' : 0, 'total_count' : 0, 'average_perframe' : 0}
+
+	def add_frame(self):
+		self.emotions['frame_no'] += 1
+
+	def add_emotion(self, emotion):
+		if emotion not in self.emotions:
+			self.emotions[emotion] = 0
+
+		self.emotions['total_count'] += 1
+		self.emotions[emotion] += 1
+
+	def get_result(self):
+		self.emotions['average_perframe'] = self.emotions['total_count'] / self.emotions['frame_no']
+
+		return str(self.emotions)

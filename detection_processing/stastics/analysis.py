@@ -17,12 +17,13 @@ path_in = f'../videos/{filename}'
 path_out = f'../results/{filename_short}'
 
 analysis_stastics.stats = analysis_stastics.stastics()
+analysis_stastics.emotions = analysis_stastics.emotions()
 test_face_improved(path_in, path_out)
 test_object_default(path_in, path_out)
 test_object_improved(path_in, path_out)
 
 avg_result = analysis_stastics.stats.get_avg()
-result_out = ''
+result_out = f'face_emotion : {analysis_stastics.emotions.get_result()}\n'
 for mode in avg_result:
 	result_out += f'{mode} : {avg_result[mode]}\n'
 with open('../results/result_avg.txt', 'w') as file:

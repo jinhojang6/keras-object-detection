@@ -5,7 +5,7 @@ import analysis_perframe as pfh
 import sys
 sys.path.append('..')
 
-def test_object_default(path_in, path_out, suffix = 'default', path_model = os.path.join(os.getcwd() , '../models/yolo.h5'), speed = 'fast'):
+def test_object_default(path_in, path_out, suffix = 'object_default', path_model = os.path.join(os.getcwd() , '../models/yolo.h5'), speed = 'fast'):
 	detector = VideoObjectDetection()
 	detector.setModelTypeAsYOLOv3()
 	detector.setModelPath(path_model)
