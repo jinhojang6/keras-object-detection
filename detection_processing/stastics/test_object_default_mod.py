@@ -8,13 +8,13 @@ import sys
 sys.path.append('..')
 from yolo_utils import infer_image
 
-def test_object_improved(path_in, path_out, suffix = 'object_improved'):
+def test_object_default_mod(path_in, path_out, suffix = 'object_default'):
 	parser = argparse.ArgumentParser()
 	FLAGS, unparsed = parser.parse_known_args()
 
 	FLAGS.model_path = '../yolov3-coco/'
-	FLAGS.weights = '../yolov3-coco/yolov3-spp.weights'
-	FLAGS.config = '../yolov3-coco/yolov3.cfg'
+	FLAGS.weights = '../yolov3-coco/yolov3-320.weights'
+	FLAGS.config = '../yolov3-coco/yolov3-320.cfg'
 	FLAGS.video_path = path_in
 	FLAGS.video_output_path = f'{path_out}_{suffix}.avi'
 	FLAGS.labels = '../yolov3-coco/coco-labels'

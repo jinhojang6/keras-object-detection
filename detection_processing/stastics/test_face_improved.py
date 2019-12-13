@@ -5,6 +5,7 @@ import analysis_perframe as pfh
 import analysis_stastics
 from keras.models import load_model
 
+import time
 import sys
 sys.path.append('..')
 from yolo_utils import infer_image
@@ -25,9 +26,9 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 	FLAGS.weights = '../yolov3-coco/yolov3-wider_16000.weights'
 	FLAGS.config = '../yolov3-coco/yolov3-face.cfg'
 	FLAGS.video_path = path_in
-	FLAGS.video_output_path = path_out + '_face_improved.avi'
+	FLAGS.video_output_path = f'{path_out}_{suffix}.avi'
 	FLAGS.labels = '../yolov3-coco/coco-labels'
-	FLAGS.confidence = 0.5
+	FLAGS.confidence = 0.1
 	FLAGS.threshold = 0.3
 	FLAGS.download_model = False
 	FLAGS.show_time = False
@@ -50,6 +51,9 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 	net = cv.dnn.readNetFromDarknet(FLAGS.config, FLAGS.weights)
 	layer_names = net.getLayerNames()
 	layer_names = [layer_names[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+
+	print(f'starting {suffix}')
+	time_0 = time.time()
 
 	frame_number = 0
 	while True:
@@ -133,3 +137,5 @@ def test_face_improved(path_in, path_out, suffix = 'face_improved'):
 
 	writer.release()
 	vid.release()
+
+	print(f'mode {suffix} finished, elapsed time : {time.time() - time_0}s')
