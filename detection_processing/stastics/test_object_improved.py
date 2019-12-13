@@ -14,7 +14,7 @@ def test_object_improved(path_in, path_out, suffix = 'object_improved'):
 
 	FLAGS.model_path = '../yolov3-coco/'
 	FLAGS.weights = '../yolov3-coco/yolov3-spp.weights'
-	FLAGS.config = '../yolov3-coco/yolov3.cfg'
+	FLAGS.config = '../yolov3-coco/yolov3-spp.cfg'
 	FLAGS.video_path = path_in
 	FLAGS.video_output_path = f'{path_out}_{suffix}.avi'
 	FLAGS.labels = '../yolov3-coco/coco-labels'
