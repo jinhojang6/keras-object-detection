@@ -19,7 +19,7 @@ from statistics import mode
 
 FLAGS = []
 
-#face detection labels, refer to coco-labels for objection
+#face detection settings
 emotion_model_path = './models/emotion_model.hdf5'
 emotion_classifier = load_model(emotion_model_path)
 emotion_target_size = emotion_classifier.input_shape[1:3]
