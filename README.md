@@ -23,7 +23,7 @@ Object detcetion & Facial emotion recognition
 - **Facial emotion training : [emotion_training/README.md](https://github.com/jinhojang6/ai-powered-detection/blob/master/emotion_training/README.md)**
     - [fer2013 dataset](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data), Tensorflow and Keras
     - [Colab](https://github.com/jinhojang6/ai-powered-detection/blob/master/emotion_training/emotion_training.ipynb) : Tensorflow-gpu
-    - Need to mount your Google drive on Colab to run `train_emotion_classifier.py`
+    - Need to mount your Google drive on Colab to run [train_emotion_classifier.py](https://github.com/jinhojang6/ai-powered-detection/blob/master/emotion_training/src/train_emotion_classifier.py)
 
 
 <br/>
