@@ -5,7 +5,7 @@
 
 ## Installation
 
-Clone the repository:
+Clone this repository:
 ```
 git clone https://github.com/jinhojang6/ai-powered-detection.git
 cd ai-powered-detection/emotion_training
@@ -56,7 +56,7 @@ drive.mount('/content/drive')
 - Find 2 examples in /processed_videos
 
 
-## To train new models for emotion classification from scratch
+## Training new models for emotion classification from scratch
 
 - Download the fer2013.tar.gz file from [here](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data)
 - Move the downloaded file to the datasets directory inside this repository.
