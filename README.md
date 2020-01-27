@@ -1,8 +1,8 @@
 ## AI-Powered-Detection
 ### Practice objects detcetion & Facial emotion recognition with Keras ###
 
-- **Detection processing(Object detection & Facial Emotion): read [detection_processing/README.md](https://github.com/jinhojang6/ai-powered-detection/blob/master/detection_processing/README.md)**
-    - Check out [yolo.py](https://github.com/jinhojang6/ai-powered-detection/blob/master/detection_processing/yolo.py) to learn how to run this program. You will be able to choose between `1. Object dection` and `2. Facial expression`.
+- **Detection processing (Object detection & Facial Emotion): read [detection_processing/README.md](https://github.com/jinhojang6/ai-powered-detection/blob/master/detection_processing/README.md)**
+    - Check out [yolo.py](https://github.com/jinhojang6/ai-powered-detection/blob/master/detection_processing/yolo.py) to learn how to run this program. You will be able to choose between `1. Object dection` and `2. Facial expression` in your terminal.
     - Objects detections: [COCO dataset](http://cocodataset.org/#home) + YOLOv3
         - Download [yolov3-spp.weights](https://pjreddie.com/media/files/yolov3-spp.weights) and move the weights file to /detection_processing/yolov3-coco
         - yolov3-spp.weights is stronger in detection but slower in processing than [yolov3.weights](https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg) 
