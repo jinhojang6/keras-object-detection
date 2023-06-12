@@ -18,8 +18,6 @@ Practice objects detcetion & Facial emotion recognition with Keras
     - Detection results:
         - Objects detection:
             <a href='https://photos.google.com/share/AF1QipNncknCcaQAhGxIN9Nb3IoHFFfuSg3cfg4MiX1ak43wczn5aoz3PStpQIA5RtSFDA?key=MGF6VmVUVHdMUjNaVmlla25ORC1TYl9vZGJvUTVB&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/UwGqDIfjcVX-TaeUQFr1aaofN5y9843z-3Myv4NnpmJq47Gb_V8eituG4gQhOa8uibJX9UWf2d3fsAsxKfrlrnlvcFOl6TXCNPOm5-wOdtg0gxQH2OMTfMgfRN047aGBTAEkn8QyVA=w2400' /></a>
-            - https://youtu.be/I6TLHhydtc8
-            - https://youtu.be/X-xy68YJ35o
             
         - Facial emotion recognition
              <a href='https://photos.google.com/share/AF1QipOYcQb-R5CAKhSYnxv6VRFc4wpsEvIUce7LdfeZCjRMLyEU5A6evwulmZs1We7-Ug?key=WGd3ZkEzRmFTTkVNY0o4NmpVak93M2RHYkE4enZ3&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/LcmtBuVjV0SAZrKnmLiShKWyWH3T9B6MwrqCS1Orvc3NYGHI-3JxKIzHOxWInA2sPULIXIA5fwcCMIb_CimhBZ_atyeIz9In4kJtbkOHXLKkja47d3S51CpgtRA6BpzaYiMGO2z3YQ=w2400' /></a>
