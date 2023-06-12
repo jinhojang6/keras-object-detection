@@ -23,8 +23,6 @@ Practice objects detcetion & Facial emotion recognition with Keras
             
         - Facial emotion recognition
              <a href='https://photos.google.com/share/AF1QipOYcQb-R5CAKhSYnxv6VRFc4wpsEvIUce7LdfeZCjRMLyEU5A6evwulmZs1We7-Ug?key=WGd3ZkEzRmFTTkVNY0o4NmpVak93M2RHYkE4enZ3&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/LcmtBuVjV0SAZrKnmLiShKWyWH3T9B6MwrqCS1Orvc3NYGHI-3JxKIzHOxWInA2sPULIXIA5fwcCMIb_CimhBZ_atyeIz9In4kJtbkOHXLKkja47d3S51CpgtRA6BpzaYiMGO2z3YQ=w2400' /></a>
-            - https://youtu.be/HKW70fkzJUI
-            - https://youtu.be/nu_I-H73cpE
 
 <br/>
 
